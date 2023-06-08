@@ -11,9 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SchedulerJob {
 
-  @Scheduled(cron = "0 0 * * * ?")
-  public void run() {
+  @Scheduled(cron = "0/3 * * * * ?")
+  public void run() throws InterruptedException {
     log.info("now time is {}", Instant.now());
+    Thread.sleep(5000);
   }
   
 }
